@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIO_LAB_HTML0</title>
+    <style>
+      ol {
+        padding-inline-start: 0;
+        margin-block-end: 1em;
+        counter-reset: section;
+      }
+
+      ol li {
+        display: block;
+      }
+
+      ol > li {
+        counter-increment: section;
+      }
+
+      ol > li::before {
+        content: counter(section) ". ";
+        font-weight: bold;
+      }
+
+      ol > li > ol {
+        counter-reset: subsection;
+      }
+
+      ol > li > ol > li {
+        counter-increment: subsection;
+      }
+
+      ol > li > ol > li::before {
+        content: counter(section) "." counter(subsection) " ";
+        margin-inline-end: 0.2em;
+      }
+
+      ol > li > ol > li > ol {
+        counter-reset: subsubsection;
+      }
+
+      ol > li > ol > li > ol > li {
+        counter-increment: subsubsection;
+      }
+
+      ol > li > ol > li > ol > li::before {
+        content: counter(section) "." counter(subsection) "."
+          counter(subsubsection) " ";
+      }
+
+      ol ol {
+        margin-block-end: 0;
+        padding-inline-start: 1.5em;
+      }
+      * {
+        line-height: 1.6; /* 1.6 vezes o tamanho da fonte (valor recomendado para leitura) */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+
+    texto inicial 
+    
+    -->
+    <center>
+      <h1 id="topopagina">
+        <a href="https://www.dio.me/" target="_blank">Dio</a>
+        <a
+          href="https://www.dio.me/curso-html"
+          title="Formação HTML Web Developer"
+          target="_blank"
+          >Formação HTML Web Developer</a
+        >
+      </h1>
+    </center>
+    <h1 style="text-align: center">
+      Desafio de projeto - Primeiros Passos com HTML
+    </h1>
+    <hr />
+    <!-- 
+    
+    Menu
+    
+    -->
+    <ol>
+      <li id="t01"><a href="#01">HTML</a></li>
+      <li id="t02">
+        <a href="#02">Introdução ao HTML na Prática</a>
+
+        <ol>
+          <li id="t02-1"><a href="#02-1">Ferramentas utilizadas</a></li>
+          <li id="t02-2"><a href="#02-2">Usando o Inspetor de Elementos</a></li>
+          <li id="t02-3"><a href="#02-3">Estrutura básica do HTML</a></li>
+          <li id="t02-4"><a href="#02-4">Falando sobre Tags</a></li>
+          <li id="t02-5"><a href="#02-5">Atributos básicos</a></li>
+          <li id="t02-6"><a href="#02-6">Executando uma página HTML</a></li>
+          <li id="t02-7"><a href="#02-7">Textos</a></li>
+          <li id="t02-8">
+            <a href="#02-8">Listas ordenadas e não ordenadas</a>
+          </li>
+          <li id="t02-9"><a href="#02-9">Links</a></li>
+        </ol>
+      </li>
+      <li id="t03"><a href="#03">Referências</a></li>
+    </ol>
+    <!-- 
+    
+    Conteúdo
+    
+    -->
+
+    <h2 id="01">
+      1. HTML &nbsp <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h2>
+    <p>
+      É uma linguagem escrita e formal que especifica um conjunto de regras
+      usadas para escrita de arquivo com extensão html (há outras), onde o
+      arquivo lido e interpretado pelo navegador para montar em tela o
+      <b>website</b>. Onde os arquivos (<b>Arquivos Estáticos</b> html, CSS,
+      Javascript, Imagens e outros ) são armazenados nos computadores servidores
+      Web e através da internet o computador cliente acessa o(s) arquivo(s),
+      onde o navegador armazena o(s) arquivo(s) no computador cliente para não
+      haver trafego inútil.
+    </p>
+    <ul>
+      <li>Não é uma linguagem de programação</li>
+      <li>Html é uma linguagem de marcação</li>
+      <li>
+        Textos delimitados por nomes que o navegador consegue interpretar –
+        <b>tag</b>. Cada nome deste delimitador tem uma função e comportamento
+        específico.
+      </li>
+      <li>Semelhante ao CSV que também é um arquivo de marcação</li>
+      <li>
+        Devido ao uso de diversos tipos de equipamento/dispositivos para acesso
+        com diferentes resoluções, deve ser considerado na criação de websites:
+      </li>
+      <ul>
+        <li>Design Responsivo ou Responsividade</li>
+        <li>
+          Compatibilidade entre Navegadore (Browsers) Boas práticas e Testes
+        </li>
+      </ul>
+    </ul>
+
+    <h2 id="02">
+      2. Introdução ao HTML na Prática &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h2>
+
+    <h3 id="02-1">
+      2.1 Ferramentas utilizadas &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <p>
+      Visual Studio Code
+      <a href="https://code.visualstudio.com/download" target="_blank">
+        Download</a
+      >. Extensão do VSCode: Live Server, Emmet (no vscode já é
+      interno-autocompleta html:5+tab)
+    </p>
+
+    <h3 id="02-2">
+      2.2 Usando o Inspetor de Elementos &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <p><b>F12</b> no navegador Google Chrome</p>
+
+    <h3 id="02-3">
+      2.3 Estrutura básica do HTML &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>index.html arquivo inicial por convenção</li>
+      <li>
+        &lthtml&gt &lthead&gt ( carrega antes)&lt/head&gt &ltbody&gt (exibe no
+        navegador)&lt/body&gt &lt/html&gt
+      </li>
+    </ul>
+
+    <h3 id="02-4">
+      2.4 Falando sobre Tags &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>&lti&gt&lt/i&gt&ltstrong&gt &lt/strong&gt - tem fechamento</li>
+      <li>&ltinput /&gt&ltimg/&gt - não tem fechamento</li>
+      <li>&lt!-- Comentário --&gt - não é processado</li>
+    </ul>
+
+    <h3 id="02-5">
+      2.5 Atributos básicos &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <p>Propriedades/ Atributos que a tag pode ter, genéricas ou específicas.</p>
+    <ul>
+      <li>id=”nome/identificador do elemento” dar um nome</li>
+      <li>style=”color: blue;” altera a cor</li>
+      <li>class=”nome” utiliza o CSS</li>
+      <li>width=”150” comprimento</li>
+      <li>type=”text, number, color” especifico do input</li>
+      <li>src=”caminho-da-imagem” especifico do img</li>
+    </ul>
+
+    <h3 id="02-6">
+      2.6 Executando uma página HTML &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <p>Usando o Live Server.</p>
+
+    <h3 id="02-7">
+      2.7 Textos &nbsp <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>
+        &lth1&gt … &lth6&gt títulos (o navegador define a margem automaticamente
+        ou alterar via CSS)
+      </li>
+      <h1>H1</h1>
+      <h2>h2</h2>
+      <h3>h3</h3>
+      <h4>h4</h4>
+      <h5>h5</h5>
+      <h6>h6</h6>
+      <li>
+        &ltp&gt parágrafo
+        <p>parágrafo</p>
+      </li>
+      <li>
+        <blockquote>
+          &ltblockquote&gt citação (espaçamento no começo)
+        </blockquote>
+      </li>
+      <li>&ltstrong&gt <strong>negrito</strong></li>
+      <li>&ltb&gt <b>negrito</b></li>
+      <li>&ltu&gt <u>sublinhado</u></li>
+      <li>&lti&gt <i>itálico</i></li>
+      <li>&ltmark&gt <mark> destacador de texto </mark></li>
+      <li>
+        &ltsup&gt superior da linha como expoente <sup>(superscript)</sup>
+      </li>
+      <li>&ltsub&gt abaixo da linha <sub>(subscript)</sub></li>
+      <li>&ltsmall&gt <small>reduz o texto</small></li>
+      <li>
+        &ltdel&gt
+        <del>
+          define o texto que foi excluído de um documento. Os navegadores
+          geralmente riscam o texto excluído
+        </del>
+      </li>
+      <li>
+        &ltins&gt
+        <ins
+          >define um texto que foi inserido em um documento. Os navegadores
+          geralmente sublinham o texto inserido</ins
+        >
+      </li>
+      <li>
+        &ltabbr&gt define uma abreviação ou um acrônimo, como "<abbr
+          title="Hyper Text Markup Language"
+          >HTML</abbr
+        >", "<abbr title="Cascading Style Sheets ou Folha de Estilo em Cascata"
+          >CSS"</abbr
+        >
+        e com texto sendo exibido ao passar o mouse
+      </li>
+      <li>
+        &lthr/&gt barra horizontal
+        <hr />
+      </li>
+
+      <li>Tipografia html</li>
+      <b>HTML Entities: Entidades HTML</b
+      >. Alguns caracteres são reservados em HTML como “&lt” menor que; “&nbsp”
+      espaço necessitando de uma substituição usada para representar outro
+      caractere na página web renderizada. tabela em :
+      <ul>
+        <li>
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Glossary/Character_reference"
+            >MDN</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/html/html_entities.asp">
+            W3Schools Html Entities</a
+          >
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/html/html_symbols.asp">
+            W3Schools Html Symbols</a
+          >
+        </li>
+      </ul>
+      <li style="color: red">style="color: red"</li>
+      <li style="font-family: Courier New">style="font-family: Courier New"</li>
+      <li style="font-size: 30px">style="font-size: 30px"</li>
+    </ul>
+
+    <h3 id="02-8">
+      2.8 Listas ordenadas e não ordenadas &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>&ltol&gt lista ordenada (autonumeração)</li>
+      <ul>
+        <li>
+          &ltol type="1"&gt Os itens da lista serão numerados com números
+          (padrão)
+        </li>
+        <li>
+          &ltol type="A"&gt Os itens da lista serão numerados com letras
+          maiúsculas
+        </li>
+        <li>
+          &ltol type="a"&gt Os itens da lista serão numerados com letras
+          minúsculas
+        </li>
+        <li>
+          &ltol type="I"&gt Os ​​itens da lista serão numerados com algarismos
+          romanos maiúsculos
+        </li>
+        <li>
+          &ltol type="i"&gt Os itens da lista serão numerados com algarismos
+          romanos minúsculos
+        </li>
+      </ul>
+      <li>&ltul&gt lista não ordenada (marcadores)</li>
+      <li>&ltli&gt Item da lista</li>
+      <li>&ltdl&gt lista de descrição.</li>
+      <li>&ltdt&gttermo de descrição.</li>
+      <li>&ltdd&gt para descrição do termo</li>
+    </ul>
+
+    <h3 id="02-9">
+      2.9 Links &nbsp
+      <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>
+        &lta href=“endereço” title=” texto no mouse” target=”_black nova
+        aba;_self na mesma aba”&gt texto&lt/a&gt
+      </li>
+      <li>&lta href=“#id” &gt Id da mesma página&lt/a&gt</li>
+    </ul>
+
+    <h3 id="03">
+      3 Referências &nbsp <a href="#topopagina"><small>&ltvoltar</small></a>
+    </h3>
+    <ul>
+      <li>
+        <a
+          href="https://www.devmedia.com.br/html-entities-html-symbols-html-characters/1011"
+          target="_blank"
+          >DevMedia HTML Entities: Entidades HTML</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://arquivo.devmedia.com.br/artigos/devmedia/html-entities.html"
+          target="_blank"
+          >>DevMedia HTML Entities: Entidades HTML Completa</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content"
+          target="_blank"
+          >MDN Html</a
+        >
+      </li>
+      <li>
+        <a href=" https://www.w3schools.com/html/default.asp" target="_blank"
+          >W3Schools HTML</a
+        >
+      </li>
+    </ul>
+  </body>
+</html>
